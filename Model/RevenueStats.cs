@@ -15,14 +15,14 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Request
     /// </summary>
     [DataMember(Name="request", EmitDefaultValue=false)]
-    public Object Request { get; set; }
+    public RequestRevenue Request { get; set; }
 
     
     /// <summary>
     /// Gets or Sets Revenues
     /// </summary>
     [DataMember(Name="revenues", EmitDefaultValue=false)]
-    public Object Revenues { get; set; }
+    public string Revenues { get; set; }
 
     
 
@@ -51,4 +51,16 @@ namespace hitaBot.Refit.Model {
     }
 
 }
+
+    public class RequestRevenue
+    {
+        [DataMember(Name = "this")]
+        public string This { get; set; }
+
+        [DataMember(Name = "type")]
+        public string Type { get; set; }
+
+        [DataMember(Name = "user")]
+        public string User { get; set; }
+    }
 }

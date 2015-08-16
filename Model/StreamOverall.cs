@@ -64,11 +64,9 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Countries
     /// </summary>
     [DataMember(Name="countries", EmitDefaultValue=false)]
-    public Object Countries { get; set; }
+    public string Countries { get; set; }
 
-    
-
-    /// <summary>
+        /// <summary>
     /// Get the string presentation of the object
     /// </summary>
     /// <returns>String presentation of the object</returns>

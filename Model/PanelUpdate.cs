@@ -29,7 +29,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Profile
     /// </summary>
     [DataMember(Name="profile", EmitDefaultValue=false)]
-    public Object Profile { get; set; }
+    public Panel Profile { get; set; }
 
     
 

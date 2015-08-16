@@ -16,14 +16,14 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Request
     /// </summary>
     [DataMember(Name="request", EmitDefaultValue=false)]
-    public Object Request { get; set; }
+    public Request Request { get; set; }
 
     
     /// <summary>
     /// Gets or Sets Subscribers
     /// </summary>
     [DataMember(Name="subscribers", EmitDefaultValue=false)]
-    public List<Object> Subscribers { get; set; }
+    public List<SubscribersObj> Subscribers { get; set; }
 
     
 
@@ -52,4 +52,36 @@ namespace hitaBot.Refit.Model {
     }
 
 }
+
+    [DataContract]
+    public class SubscribersObj
+    {
+
+        [DataMember(Name = "followers")]
+        public int Followers { get; set; }
+
+        [DataMember(Name = "user_name")]
+        public string UserName { get; set; }
+
+        [DataMember(Name = "user_id")]
+        public int UserId { get; set; }
+
+        [DataMember(Name = "user_logo")]
+        public string UserLogo { get; set; }
+
+        [DataMember(Name = "user_logo_small")]
+        public string UserLogoSmall { get; set; }
+
+        [DataMember(Name = "sub_date_added")]
+        public string SubDateAdded { get; set; }
+
+        [DataMember(Name = "sub_date_valid")]
+        public string SubDateValid { get; set; }
+
+        [DataMember(Name = "sub_payment_method")]
+        public string SubPaymentMethod { get; set; }
+
+        [DataMember(Name = "canceled")]
+        public string Canceled { get; set; }
+    }
 }

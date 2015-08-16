@@ -10,9 +10,8 @@ namespace hitaBot.Refit.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class UserList : List<Object> {
+  public class UserList : List<ListUser> {
     
-
     /// <summary>
     /// Get the string presentation of the object
     /// </summary>

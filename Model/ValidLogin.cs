@@ -92,7 +92,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Data
     /// </summary>
     [DataMember(Name="data", EmitDefaultValue=false)]
-    public Object Data { get; set; }
+    public DataObj Data { get; set; }
 
     
     /// <summary>
@@ -157,6 +157,42 @@ namespace hitaBot.Refit.Model {
     public string ToJson() {
       return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
+        [DataContract]
+        public class DataObj
+        {
 
-}
+            [DataMember(Name = "app")]
+            public string App { get; set; }
+
+            [DataMember(Name = "user_id")]
+            public string UserId { get; set; }
+
+            [DataMember(Name = "user_name")]
+            public string UserName { get; set; }
+
+            [DataMember(Name = "user_logo")]
+            public string UserLogo { get; set; }
+
+            [DataMember(Name = "user_logo_small")]
+            public string UserLogoSmall { get; set; }
+
+            [DataMember(Name = "user_banned")]
+            public string UserBanned { get; set; }
+
+            [DataMember(Name = "superadmin")]
+            public string Superadmin { get; set; }
+
+            [DataMember(Name = "livestream_count")]
+            public string LivestreamCount { get; set; }
+
+            [DataMember(Name = "followers")]
+            public string Followers { get; set; }
+
+            [DataMember(Name = "authToken")]
+            public string AuthToken { get; set; }
+
+            [DataMember(Name = "login")]
+            public bool Login { get; set; }
+        }
+    }
 }

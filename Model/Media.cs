@@ -16,7 +16,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Request
     /// </summary>
     [DataMember(Name="request", EmitDefaultValue=false)]
-    public Object Request { get; set; }
+    public Request Request { get; set; }
 
     
     /// <summary>
@@ -38,7 +38,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Livestream
     /// </summary>
     [DataMember(Name="livestream", EmitDefaultValue=false)]
-    public List<Object> Livestream { get; set; }
+    public List<MediaObj> Livestream { get; set; }
 
     
 

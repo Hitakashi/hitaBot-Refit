@@ -15,7 +15,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Icon
     /// </summary>
     [DataMember(Name="icon", EmitDefaultValue=false)]
-    public Object Icon { get; set; }
+    public ChatIconInfoObj Icon { get; set; }
 
     
 

@@ -113,7 +113,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Timeline
     /// </summary>
     [DataMember(Name="timeline", EmitDefaultValue=false)]
-    public Object Timeline { get; set; }
+    public string Timeline { get; set; }
 
     
 

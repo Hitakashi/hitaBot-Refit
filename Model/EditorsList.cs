@@ -16,7 +16,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets List
     /// </summary>
     [DataMember(Name="list", EmitDefaultValue=false)]
-    public List<Object> List { get; set; }
+    public List<Editors> List { get; set; }
 
     
 

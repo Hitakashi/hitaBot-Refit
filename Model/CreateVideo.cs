@@ -64,7 +64,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets MediaCategoryId
     /// </summary>
     [DataMember(Name="media_category_id", EmitDefaultValue=false)]
-    public Object MediaCategoryId { get; set; }
+    public MediaCategoryId MediaCategoryId { get; set; }
 
     
     /// <summary>
@@ -141,4 +141,39 @@ namespace hitaBot.Refit.Model {
     }
 
 }
+
+    [DataContract]
+    public class MediaCategoryId
+    {
+
+        [DataMember(Name = "category_id")]
+        public int CategoryId { get; set; }
+
+        [DataMember(Name = "category_name")]
+        public string CategoryName { get; set; }
+
+        [DataMember(Name = "category_name_short")]
+        public string CategoryNameShort { get; set; }
+
+        [DataMember(Name = "category_seo_key")]
+        public string CategorySeoKey { get; set; }
+
+        [DataMember(Name = "category_viewers")]
+        public int CategoryViewers { get; set; }
+
+        [DataMember(Name = "category_media_count")]
+        public int CategoryMediaCount { get; set; }
+
+        [DataMember(Name = "category_channels")]
+        public string CategoryChannels { get; set; }
+
+        [DataMember(Name = "category_logo_small")]
+        public string CategoryLogoSmall { get; set; }
+
+        [DataMember(Name = "category_logo_large")]
+        public string CategoryLogoLarge { get; set; }
+
+        [DataMember(Name = "category_updated")]
+        public string CategoryUpdated { get; set; }
+    }
 }

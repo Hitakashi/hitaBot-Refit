@@ -16,7 +16,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Request
     /// </summary>
     [DataMember(Name="request", EmitDefaultValue=false)]
-    public Object Request { get; set; }
+    public Request Request { get; set; }
 
     
     /// <summary>
@@ -30,7 +30,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Video
     /// </summary>
     [DataMember(Name="video", EmitDefaultValue=false)]
-    public List<Object> VideoVar { get; set; }
+    public List<VideoObj> VideoVar { get; set; }
 
     
 

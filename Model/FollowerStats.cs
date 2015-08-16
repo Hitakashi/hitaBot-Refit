@@ -16,7 +16,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Followers
     /// </summary>
     [DataMember(Name="followers", EmitDefaultValue=false)]
-    public List<Object> Followers { get; set; }
+    public List<FollowerStatsObj> Followers { get; set; }
 
     
 

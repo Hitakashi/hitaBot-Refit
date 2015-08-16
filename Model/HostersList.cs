@@ -16,7 +16,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Hosters
     /// </summary>
     [DataMember(Name="hosters", EmitDefaultValue=false)]
-    public List<Object> Hosters { get; set; }
+    public List<HostersListObj> Hosters { get; set; }
 
     
 

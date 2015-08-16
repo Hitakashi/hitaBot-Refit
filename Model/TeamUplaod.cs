@@ -15,14 +15,14 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Logo
     /// </summary>
     [DataMember(Name="logo", EmitDefaultValue=false)]
-    public Object Logo { get; set; }
+    public LogoObj Logo { get; set; }
 
     
     /// <summary>
     /// Gets or Sets Cover
     /// </summary>
     [DataMember(Name="cover", EmitDefaultValue=false)]
-    public Object Cover { get; set; }
+    public CoverObj Cover { get; set; }
 
     
 
@@ -49,6 +49,23 @@ namespace hitaBot.Refit.Model {
     public string ToJson() {
       return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
+        [DataContract]
+        public class LogoObj
+        {
 
-}
+            [DataMember(Name = "small")]
+            public string Small { get; set; }
+
+            [DataMember(Name = "large")]
+            public string Large { get; set; }
+        }
+
+        [DataContract]
+        public class CoverObj
+        {
+
+            [DataMember(Name = "cover")]
+            public string Cover { get; set; }
+        }
+    }
 }

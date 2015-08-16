@@ -16,14 +16,14 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Request
     /// </summary>
     [DataMember(Name="request", EmitDefaultValue=false)]
-    public Object Request { get; set; }
+    public Request Request { get; set; }
 
     
     /// <summary>
     /// Gets or Sets Followers
     /// </summary>
     [DataMember(Name="followers", EmitDefaultValue=false)]
-    public List<Object> Followers { get; set; }
+    public List<FollowersListObj> Followers { get; set; }
 
     
     /// <summary>

@@ -22,7 +22,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Params
     /// </summary>
     [DataMember(Name="params", EmitDefaultValue=false)]
-    public Object Params { get; set; }
+    public Params Params { get; set; }
 
     
 

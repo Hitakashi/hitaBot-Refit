@@ -10,7 +10,7 @@ namespace hitaBot.Refit.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class WSServers : List<Object> {
+  public class WSServers : List<WSServers.Servers> {
     
 
     /// <summary>
@@ -29,9 +29,15 @@ namespace hitaBot.Refit.Model {
     /// Get the JSON string presentation of the object
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
-    public string ToJson() {
+    public  new string ToJson() {
       return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
+        [DataContract]
+        public class Servers
+        {
 
-}
+            [DataMember(Name = "server_ip")]
+            public string ServerIp { get; set; }
+        }
+    }
 }

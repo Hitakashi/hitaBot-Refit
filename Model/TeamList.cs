@@ -16,7 +16,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Teams
     /// </summary>
     [DataMember(Name="teams", EmitDefaultValue=false)]
-    public List<Object> Teams { get; set; }
+    public List<Team> Teams { get; set; }
 
     
 
@@ -41,6 +41,15 @@ namespace hitaBot.Refit.Model {
     public string ToJson() {
       return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
+        [DataContract]
+        public class Team
+        {
 
-}
+            [DataMember(Name = "group_id")]
+            public string GroupId { get; set; }
+
+            [DataMember(Name = "group_name")]
+            public string GroupName { get; set; }
+        }
+    }
 }

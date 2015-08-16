@@ -10,7 +10,7 @@ namespace hitaBot.Refit.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class Ingests : List<Object> {
+  public class Ingests : List<IngestsObj> {
     
 
     /// <summary>

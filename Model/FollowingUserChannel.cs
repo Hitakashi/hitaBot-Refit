@@ -15,7 +15,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Following
     /// </summary>
     [DataMember(Name="following", EmitDefaultValue=false)]
-    public Object Following { get; set; }
+    public FollowingUserChannelObj Following { get; set; }
 
     
 

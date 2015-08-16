@@ -16,7 +16,7 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Info
     /// </summary>
     [DataMember(Name="info", EmitDefaultValue=false)]
-    public Object Info { get; set; }
+    public InfoObj Info { get; set; }
 
     
     /// <summary>
@@ -50,6 +50,33 @@ namespace hitaBot.Refit.Model {
     public string ToJson() {
       return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
+        [DataContract]
+        public class InfoObj
+        {
 
-}
+            [DataMember(Name = "group_id")]
+            public int GroupId { get; set; }
+
+            [DataMember(Name = "founder_name")]
+            public string FounderName { get; set; }
+
+            [DataMember(Name = "group_name")]
+            public string GroupName { get; set; }
+
+            [DataMember(Name = "group_display_name")]
+            public string GroupDisplayName { get; set; }
+
+            [DataMember(Name = "group_text")]
+            public string GroupText { get; set; }
+
+            [DataMember(Name = "group_logo_large")]
+            public string GroupLogoLarge { get; set; }
+
+            [DataMember(Name = "group_logo_small")]
+            public string GroupLogoSmall { get; set; }
+
+            [DataMember(Name = "group_cover")]
+            public string GroupCover { get; set; }
+        }
+    }
 }

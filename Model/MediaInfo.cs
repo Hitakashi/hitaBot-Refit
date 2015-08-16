@@ -15,14 +15,14 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Request
     /// </summary>
     [DataMember(Name="request", EmitDefaultValue=false)]
-    public Object Request { get; set; }
+    public Request Request { get; set; }
 
     
     /// <summary>
     /// Gets or Sets Mediainfo
     /// </summary>
     [DataMember(Name="mediainfo", EmitDefaultValue=false)]
-    public Object Mediainfo { get; set; }
+    public MediaInfoObj Mediainfo { get; set; }
 
     
 

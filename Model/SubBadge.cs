@@ -16,14 +16,14 @@ namespace hitaBot.Refit.Model {
     /// Gets or Sets Request
     /// </summary>
     [DataMember(Name="request", EmitDefaultValue=false)]
-    public Object Request { get; set; }
+    public Request Request { get; set; }
 
     
     /// <summary>
     /// Gets or Sets Badges
     /// </summary>
     [DataMember(Name="badges", EmitDefaultValue=false)]
-    public List<Object> Badges { get; set; }
+    public List<Badge> Badges { get; set; }
 
     
 
@@ -52,4 +52,24 @@ namespace hitaBot.Refit.Model {
     }
 
 }
+
+    [DataContract]
+    public class Badge
+    {
+
+        [DataMember(Name = "badge_id")]
+        public int BadgeId { get; set; }
+
+        [DataMember(Name = "badge_media_id")]
+        public int BadgeMediaId { get; set; }
+
+        [DataMember(Name = "badge_name")]
+        public string BadgeName { get; set; }
+
+        [DataMember(Name = "badge_image")]
+        public string BadgeImage { get; set; }
+
+        [DataMember(Name = "badge_enabled")]
+        public int BadgeEnabled { get; set; }
+    }
 }
