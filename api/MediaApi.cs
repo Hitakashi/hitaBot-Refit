@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using hitaBot.Refit.Model;
 using Refit;
@@ -15,7 +14,6 @@ namespace hitaBot.Refit.api
 
         [Get("/ingests/default_list")]
         Task<Ingests> getIngests();
-
 
         /**
    * Get List of Media Objects
@@ -36,11 +34,11 @@ namespace hitaBot.Refit.api
 
         [Get("/media/live/list")]
         Task<MediaList> getMediaLiveList(
-            [AliasAs("limit")] int limit, [AliasAs("showHidden")] Boolean showHidden, [AliasAs("filter")] String filter,
-            [AliasAs("liveonly")] String liveonly, [AliasAs("featured")] String featured,
-            [AliasAs("follower_id")] int followerId, [AliasAs("game")] String game,
-            [AliasAs("hiddenOnly")] Boolean hiddenOnly, [AliasAs("start")] int start,
-            [AliasAs("publicOnly")] Boolean publicOnly, [AliasAs("search")] String search
+            [AliasAs("limit")] int limit, [AliasAs("showHidden")] bool showHidden, [AliasAs("filter")] string filter,
+            [AliasAs("liveonly")] string liveonly, [AliasAs("featured")] string featured,
+            [AliasAs("follower_id")] int followerId, [AliasAs("game")] string game,
+            [AliasAs("hiddenOnly")] bool hiddenOnly, [AliasAs("start")] int start,
+            [AliasAs("publicOnly")] bool publicOnly, [AliasAs("search")] string search
             );
 
         /**
@@ -56,9 +54,9 @@ namespace hitaBot.Refit.api
 
         [Get("/media/live/{channel}")]
         Task<Media> getMediaLive(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken,
-            [AliasAs("limit")] String limit, [AliasAs("showHidden")] Boolean showHidden,
-            [AliasAs("liveonly")] String liveonly
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken,
+            [AliasAs("limit")] string limit, [AliasAs("showHidden")] bool showHidden,
+            [AliasAs("liveonly")] string liveonly
             );
 
         /**
@@ -72,7 +70,7 @@ namespace hitaBot.Refit.api
 
         [Put("/media/live/{channel}")]
         Task<UpdateMedia> updateMedia(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken, [Body] UpdateMedia body
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken, [Body] UpdateMedia body
             );
 
         /**
@@ -84,7 +82,7 @@ namespace hitaBot.Refit.api
 
         [Get("/media/status/{channel}")]
         Task<MediaStatus> getMediaStatus(
-            [AliasAs("channel")] String channel
+            [AliasAs("channel")] string channel
             );
 
         /**
@@ -97,7 +95,7 @@ namespace hitaBot.Refit.api
 
         [Post("/media/video/list")]
         Task<VideoCreated> createVideo(
-            [AliasAs("authToken")] String authToken, [Body] CreateVideo body
+            [AliasAs("authToken")] string authToken, [Body] CreateVideo body
             );
 
         /**
@@ -117,10 +115,10 @@ namespace hitaBot.Refit.api
 
         [Get("/media/video/{channel}/list")]
         Task<VideoList> getVideoList(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken,
-            [AliasAs("filter")] String filter, [AliasAs("hiddenOnly")] Boolean hiddenOnly, [AliasAs("limit")] int limit,
-            [AliasAs("publicOnly")] Boolean publicOnly, [AliasAs("search")] String search,
-            [AliasAs("showHidden")] Boolean showHidden, [AliasAs("yt")] Boolean yt
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken,
+            [AliasAs("filter")] string filter, [AliasAs("hiddenOnly")] bool hiddenOnly, [AliasAs("limit")] int limit,
+            [AliasAs("publicOnly")] bool publicOnly, [AliasAs("search")] string search,
+            [AliasAs("showHidden")] bool showHidden, [AliasAs("yt")] bool yt
             );
 
         /**
@@ -133,7 +131,7 @@ namespace hitaBot.Refit.api
 
         [Get("/media/video/{videoID}")]
         Task<Video> getVideo(
-            [AliasAs("videoID")] int videoID, [AliasAs("showHidden")] Boolean showHidden
+            [AliasAs("videoID")] int videoID, [AliasAs("showHidden")] bool showHidden
             );
 
         /**
@@ -147,7 +145,7 @@ namespace hitaBot.Refit.api
 
         [Put("/media/video/{videoID}")]
         Task<UpdateVideo> updateVideo(
-            [AliasAs("videoID")] int videoID, [AliasAs("authToken")] String authToken, [Body] UpdateVideo body
+            [AliasAs("videoID")] int videoID, [AliasAs("authToken")] string authToken, [Body] UpdateVideo body
             );
 
         /**
@@ -159,7 +157,7 @@ namespace hitaBot.Refit.api
 
         [Get("/media/views/{channel}")]
         Task<MediaViews> getMediaViews(
-            [AliasAs("channel")] String channel
+            [AliasAs("channel")] string channel
             );
 
         /**
@@ -171,7 +169,7 @@ namespace hitaBot.Refit.api
 
         [Get("/mediainfo/live/{mediaID}")]
         Task<MediaInfo> getMediaInfo(
-            [AliasAs("mediaID")] String mediaID
+            [AliasAs("mediaID")] string mediaID
             );
 
         /**
@@ -185,8 +183,9 @@ namespace hitaBot.Refit.api
 
         [Get("/recordings/{channel}")]
         Task<Recording> getRecordings(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken, [AliasAs("limit")] int limit
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken, [AliasAs("limit")] int limit
             );
+
         /**
 * Get Game Properties
 * You can use either a game ID or game name. For a game name you must use the soe query.
@@ -197,7 +196,7 @@ namespace hitaBot.Refit.api
 
         [Get("/game/{game}")]
         Task<Game> getGame(
-            [AliasAs("game")] String game, [AliasAs("soe")] Boolean soe
+            [AliasAs("game")] string game, [AliasAs("soe")] bool soe
             );
 
         /**
@@ -211,7 +210,7 @@ namespace hitaBot.Refit.api
 
         [Get("/games")]
         Task<Games> getGames(
-            [AliasAs("q")] String q, [AliasAs("limit")] int limit, [AliasAs("liveonly")] Boolean liveonly
+            [AliasAs("q")] string q, [AliasAs("limit")] int limit, [AliasAs("liveonly")] bool liveonly
             );
     }
 }

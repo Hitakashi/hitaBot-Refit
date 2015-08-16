@@ -1,10 +1,9 @@
-using System;
 using System.Threading.Tasks;
 using hitaBot.Refit.Model;
 using Refit;
 
 namespace hitaBot.Refit.api
-{ 
+{
     public interface AuthApi
     {
         /**
@@ -36,7 +35,6 @@ namespace hitaBot.Refit.api
        */
 
         [Post("/auth/valid/{app}")]
-        Task<ValidAuth> verifyAuth([AliasAs("app")] String app, [AliasAs("token")] String token);
+        Task<ValidAuth> verifyAuth([AliasAs("app")] string app, [AliasAs("token")] string token);
     }
 }
-

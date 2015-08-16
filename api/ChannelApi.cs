@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using hitaBot.Refit.Model;
 using Refit;
@@ -17,7 +16,7 @@ namespace hitaBot.Refit.api
 
         [Get("/editors/{channel}")]
         Task<EditorsList> getEditors(
-            [AliasAs("authToken")] String authToken, [AliasAs("channel")] String channel
+            [AliasAs("authToken")] string authToken, [AliasAs("channel")] string channel
             );
 
         /**
@@ -63,7 +62,7 @@ namespace hitaBot.Refit.api
 
         [Get("/followerstats/{channel}")]
         Task<FollowerStats> getFollowerStats(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -76,7 +75,7 @@ namespace hitaBot.Refit.api
 
         [Get("/hosters/{channel}")]
         Task<HostersList> getHosters(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -88,7 +87,7 @@ namespace hitaBot.Refit.api
 
         [Get("/mediabadges/{channel}")]
         Task<SubBadge> getSubBadge(
-            [AliasAs("channel")] String channel
+            [AliasAs("channel")] string channel
             );
 
         /**
@@ -101,7 +100,7 @@ namespace hitaBot.Refit.api
 
         [Get("/mediakey/{channel}")]
         Task<MediaKey> getStreamKey(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -114,7 +113,7 @@ namespace hitaBot.Refit.api
 
         [Put("/mediakey/{channel}")]
         Task<MediaKey> resetStreamKey(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -126,7 +125,7 @@ namespace hitaBot.Refit.api
 
         [Get("/profile/{channel}")]
         Task<PanelProfile> getPanels(
-            [AliasAs("channel")] String channel
+            [AliasAs("channel")] string channel
             );
 
         /**
@@ -139,7 +138,7 @@ namespace hitaBot.Refit.api
 
         [Post("/profile/{channel}")]
         Task<ErrorOnly> updatePanels(
-            [AliasAs("channel")] String channel, [Body] PanelUpdate body
+            [AliasAs("channel")] string channel, [Body] PanelUpdate body
             );
 
         /**
@@ -152,7 +151,7 @@ namespace hitaBot.Refit.api
 
         [Post("/profileenable/{channel}")]
         Task<SuccessOnly> toggleProfile(
-            [AliasAs("channel")] String channel, [Body] ProfileEnable body
+            [AliasAs("channel")] string channel, [Body] ProfileEnable body
             );
 
         /**
@@ -167,10 +166,10 @@ namespace hitaBot.Refit.api
 
         [Get("/revenues/channel/{channel}")]
         Task<RevenueStats> getRevenueStats(
-            [AliasAs("channel")] String channel,
-            [AliasAs("authToken")] String authToken,
-            [AliasAs("startDate")] String startDate,
-            [AliasAs("endDate")] String endDate
+            [AliasAs("channel")] string channel,
+            [AliasAs("authToken")] string authToken,
+            [AliasAs("startDate")] string startDate,
+            [AliasAs("endDate")] string endDate
             );
 
         /**
@@ -185,8 +184,8 @@ namespace hitaBot.Refit.api
 
         [Get("/streamedseconds/{channel}/{startEpoch}/{endEpoch}")]
         Task<StreamedSeconds> getStreamedSeconds(
-            [AliasAs("channel")] String channel, [AliasAs("startEpoch")] String startEpoch,
-            [AliasAs("endEpoch")] String endEpoch, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("startEpoch")] string startEpoch,
+            [AliasAs("endEpoch")] string endEpoch, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -201,8 +200,8 @@ namespace hitaBot.Refit.api
 
         [Get("/streamoverallstats/{channel}/{startEpoch}/{endEpoch}")]
         Task<StreamOverall> getOverallStats(
-            [AliasAs("channel")] String channel, [AliasAs("startEpoch")] String startEpoch,
-            [AliasAs("endEpoch")] String endEpoch, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("startEpoch")] string startEpoch,
+            [AliasAs("endEpoch")] string endEpoch, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -217,8 +216,8 @@ namespace hitaBot.Refit.api
 
         [Get("/streamstats/{channel}/{startEpoch}/{endEpoch}")]
         Task<StreamStats> getStreamStats(
-            [AliasAs("channel")] String channel, [AliasAs("startEpoch")] String startEpoch,
-            [AliasAs("endEpoch")] String endEpoch, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("startEpoch")] string startEpoch,
+            [AliasAs("endEpoch")] string endEpoch, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -230,7 +229,7 @@ namespace hitaBot.Refit.api
 
         [Get("/subscription/info/channel/{channel}")]
         Task<SubInfo> getSubInfo(
-            [AliasAs("channel")] String channel
+            [AliasAs("channel")] string channel
             );
 
         /**
@@ -244,7 +243,7 @@ namespace hitaBot.Refit.api
 
         [Post("/ws/combreak/{channel}/{count}")]
         Task<ComBreak> runCom(
-            [AliasAs("channel")] String channel, [AliasAs("count")] String count, [Body] AuthToken body
+            [AliasAs("channel")] string channel, [AliasAs("count")] string count, [Body] AuthToken body
             );
     }
 }

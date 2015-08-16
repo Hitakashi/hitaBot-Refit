@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using hitaBot.Refit.Model;
 using Refit;
@@ -16,7 +15,7 @@ namespace hitaBot.Refit.api
 
         [Get("/chat/blacklist/{channel}")]
         Task<ChatBlacklist> getChatBlacklist(
-            [AliasAs("channel")] String channel
+            [AliasAs("channel")] string channel
             );
 
         /**
@@ -30,7 +29,7 @@ namespace hitaBot.Refit.api
 
         [Post("/chat/blacklist/{channel}")]
         Task<SuccessOnlyString> updateChatBlacklist(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken,
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken,
             [Body] UpdateChatBlacklist body
             );
 
@@ -44,7 +43,7 @@ namespace hitaBot.Refit.api
 
         [Get("/chat/emotes/{user}")]
         Task<ChatEmotes> getChatEmotes(
-            [AliasAs("user")] String user, [AliasAs("authToken")] String authToken
+            [AliasAs("user")] string user, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -56,7 +55,7 @@ namespace hitaBot.Refit.api
 
         [Get("/chat/icon/{iconName}")]
         Task<ChatIconInfo> getChatIconInfo(
-            [AliasAs("iconName")] String iconName
+            [AliasAs("iconName")] string iconName
             );
 
         /**
@@ -69,7 +68,7 @@ namespace hitaBot.Refit.api
 
         [Get("/chat/icons/{channel}")]
         Task<ChatIcons> getChatIcons(
-            [AliasAs("channel")] String channel, [AliasAs("premiumOnly")] String premiumOnly
+            [AliasAs("channel")] string channel, [AliasAs("premiumOnly")] string premiumOnly
             );
 
         /**
@@ -82,7 +81,7 @@ namespace hitaBot.Refit.api
 
         [Get("/chat/moderations/{user}")]
         Task<ChatModerations> getModerations(
-            [AliasAs("user")] String user, [AliasAs("authToken")] String authToken
+            [AliasAs("user")] string user, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -95,7 +94,7 @@ namespace hitaBot.Refit.api
 
         [Get("/chat/moderators/{channel}")]
         Task<ChatModerators> getChatMods(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -108,7 +107,7 @@ namespace hitaBot.Refit.api
 
         [Post("/chat/moderators/{channel}")]
         Task<Success> modifyChatMods(
-            [AliasAs("channel")] String channel, [Body] AddChatModerators body
+            [AliasAs("channel")] string channel, [Body] AddChatModerators body
             );
 
         /**
@@ -120,7 +119,6 @@ namespace hitaBot.Refit.api
         [Get("/chat/servers")]
         Task<WSServers> getChatServers();
 
-
         /**
    * Get Chat Settings
    * 
@@ -131,7 +129,7 @@ namespace hitaBot.Refit.api
 
         [Get("/chat/settings/{channel}")]
         Task<ChatSettings> getChatSettings(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -145,7 +143,7 @@ namespace hitaBot.Refit.api
 
         [Post("/chat/settings/{channel}")]
         Task<Success> updateChatSettings(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken, [Body] ChatSettings body
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken, [Body] ChatSettings body
             );
     }
 }

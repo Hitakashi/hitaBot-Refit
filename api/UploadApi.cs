@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,7 +21,7 @@ namespace hitaBot.Refit.api
         [Multipart]
         [Post("/upload/account/{user}/{authToken}")]
         Task<Cover> uploadUserAvatarCover(
-            [AliasAs("user")] String user, [AliasAs("authToken")] String authToken,
+            [AliasAs("user")] string user, [AliasAs("authToken")] string authToken,
             [AttachmentName("file")] Stream file = null, [AttachmentName("cover")] Stream cover = null
             );
 
@@ -36,7 +35,7 @@ namespace hitaBot.Refit.api
 
         [Get("/upload/description/{channel}/{authToken}")]
         Task<List<GetUploadDesc>> getDescImages(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -50,8 +49,8 @@ namespace hitaBot.Refit.api
 
         [Multipart]
         [Post("/upload/description/{channel}/{authToken}")]
-        Task<String> uploadDescImage(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken,
+        Task<string> uploadDescImage(
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken,
             [AttachmentName("file")] Stream file
             );
 
@@ -66,8 +65,8 @@ namespace hitaBot.Refit.api
 
         [Delete("/upload/description/{channel}/{authToken}")]
         Task<SuccessOnlyString> removeDescImages(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken,
-            [AliasAs("image_id")] String imageId
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken,
+            [AliasAs("image_id")] string imageId
             );
 
         /**
@@ -82,7 +81,7 @@ namespace hitaBot.Refit.api
         [Multipart]
         [Post("/upload/team/{user}/{authToken}")]
         Task<TeamUplaod> uploadTeamImage(
-            [AliasAs("user")] String user, [AliasAs("authToken")] String authToken, [AttachmentName("file")] Stream file
+            [AliasAs("user")] string user, [AliasAs("authToken")] string authToken, [AttachmentName("file")] Stream file
             );
     }
 }

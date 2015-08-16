@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using hitaBot.Refit.Model;
 using Refit;
@@ -17,7 +16,7 @@ namespace hitaBot.Refit.api
 
         [Post("/team")]
         Task<TeamCreate> createTeam(
-            [AliasAs("authToken")] String authToken, [Body] CreateTeam body
+            [AliasAs("authToken")] string authToken, [Body] CreateTeam body
             );
 
         /**
@@ -35,9 +34,9 @@ namespace hitaBot.Refit.api
 
         [Get("/team/{teamName}")]
         Task<Team> getTeam(
-            [AliasAs("teamName")] String teamName, [AliasAs("filter")] String filter, [AliasAs("limit")] int limit,
-            [AliasAs("liveonly")] Boolean liveonly, [AliasAs("media")] Boolean media,
-            [AliasAs("media_type")] String mediaType, [AliasAs("offset")] int offset
+            [AliasAs("teamName")] string teamName, [AliasAs("filter")] string filter, [AliasAs("limit")] int limit,
+            [AliasAs("liveonly")] bool liveonly, [AliasAs("media")] bool media,
+            [AliasAs("media_type")] string mediaType, [AliasAs("offset")] int offset
             );
 
         /**
@@ -53,9 +52,9 @@ namespace hitaBot.Refit.api
 
         [Put("/team/{teamName}/{user}")]
         Task<UpdateTeam> updateTeam(
-            [AliasAs("teamName")] String teamName, [AliasAs("user")] String user,
-            [AliasAs("authToken")] String authToken,
-            [Body] UpdateTeam body, [AliasAs("action")] String action
+            [AliasAs("teamName")] string teamName, [AliasAs("user")] string user,
+            [AliasAs("authToken")] string authToken,
+            [Body] UpdateTeam body, [AliasAs("action")] string action
             );
 
         /**
@@ -70,8 +69,8 @@ namespace hitaBot.Refit.api
 
         [Delete("/team/{teamName}/{user}")]
         Task<LeaveTeam> deleteTeam(
-            [AliasAs("teamName")] String teamName, [AliasAs("user")] String user,
-            [AliasAs("authToken")] String authToken,
+            [AliasAs("teamName")] string teamName, [AliasAs("user")] string user,
+            [AliasAs("authToken")] string authToken,
             [AliasAs("group_id")] int groupId
             );
 
@@ -84,7 +83,7 @@ namespace hitaBot.Refit.api
 
         [Get("/teamlist")]
         Task<TeamList> getTeamList(
-            [AliasAs("q")] String q
+            [AliasAs("q")] string q
             );
 
         /**
@@ -96,7 +95,7 @@ namespace hitaBot.Refit.api
 
         [Get("/teams")]
         Task<Teams> searchTeams(
-            [AliasAs("search")] String search
+            [AliasAs("search")] string search
             );
 
         /**
@@ -112,8 +111,8 @@ namespace hitaBot.Refit.api
 
         [Get("/teams/{user}")]
         Task<TeamsUser> getTeamUser(
-            [AliasAs("user")] String user, [AliasAs("liveonly")] Boolean liveonly, [AliasAs("media")] Boolean media,
-            [AliasAs("media_type")] String mediaType, [AliasAs("partner")] Boolean partner
+            [AliasAs("user")] string user, [AliasAs("liveonly")] bool liveonly, [AliasAs("media")] bool media,
+            [AliasAs("media_type")] string mediaType, [AliasAs("partner")] bool partner
             );
     }
 }

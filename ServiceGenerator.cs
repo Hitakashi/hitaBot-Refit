@@ -1,12 +1,14 @@
-using System;
 using Refit;
 
-public class ServiceGenerator
+namespace hitaBot.Refit
 {
-    public static T createService<T>()
+    public class ServiceGenerator
     {
-        var adapter = RestService.For<T>("https://api.hitbox.tv");
+        public static T createService<T>()
+        {
+            var adapter = RestService.For<T>("https://api.hitbox.tv");
 
-        return adapter;
+            return adapter;
+        }
     }
 }

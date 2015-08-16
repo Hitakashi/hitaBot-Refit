@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using hitaBot.Refit.Model;
 using Refit;
@@ -17,7 +16,7 @@ namespace hitaBot.Refit.api
 
         [Post("/facebook/post")]
         Task<SocialPost> postFacebook(
-            [AliasAs("authToken")] String authToken, [AliasAs("user_name")] String userName
+            [AliasAs("authToken")] string authToken, [AliasAs("user_name")] string userName
             );
 
         /**
@@ -30,7 +29,7 @@ namespace hitaBot.Refit.api
 
         [Post("/follow")]
         Task<SuccessFollow> followChannel(
-            [AliasAs("authToken")] String authToken, [Body] Object body
+            [AliasAs("authToken")] string authToken, [Body] object body
             );
 
         /**
@@ -44,8 +43,8 @@ namespace hitaBot.Refit.api
 
         [Delete("/follow")]
         Task<UnfollowUser> unfollowUser(
-            [AliasAs("authToken")] String authToken, [AliasAs("follow_id")] String followId,
-            [AliasAs("type")] String type
+            [AliasAs("authToken")] string authToken, [AliasAs("follow_id")] string followId,
+            [AliasAs("type")] string type
             );
 
         /**
@@ -61,8 +60,8 @@ namespace hitaBot.Refit.api
 
         [Get("/following/user")]
         Task<FollowingUser> getFollowing(
-            [AliasAs("user_name")] String userName, [AliasAs("sort")] String sort, [AliasAs("offset")] int offset,
-            [AliasAs("limit")] int limit, [AliasAs("reverse")] Boolean reverse
+            [AliasAs("user_name")] string userName, [AliasAs("sort")] string sort, [AliasAs("offset")] int offset,
+            [AliasAs("limit")] int limit, [AliasAs("reverse")] bool reverse
             );
 
         /**
@@ -75,7 +74,7 @@ namespace hitaBot.Refit.api
 
         [Get("/following/user/{channel}")]
         Task<FollowingUserChannel> getFollowingUser(
-            [AliasAs("channel")] String channel, [AliasAs("user_name")] String userName
+            [AliasAs("channel")] string channel, [AliasAs("user_name")] string userName
             );
 
         /**
@@ -88,7 +87,7 @@ namespace hitaBot.Refit.api
 
         [Get("/notifications")]
         Task<Notifications> getNotifications(
-            [AliasAs("authToken")] String authToken, [AliasAs("user_name")] String userName
+            [AliasAs("authToken")] string authToken, [AliasAs("user_name")] string userName
             );
 
         /**
@@ -102,7 +101,7 @@ namespace hitaBot.Refit.api
 
         [Put("/notifications")]
         Task<SuccessOnlyString> setNotifications(
-            [AliasAs("authToken")] String authToken, [AliasAs("user_name")] String userName,
+            [AliasAs("authToken")] string authToken, [AliasAs("user_name")] string userName,
             [Body] SetNotifications body
             );
 
@@ -116,7 +115,7 @@ namespace hitaBot.Refit.api
 
         [Get("/subscriberlist/{user}")]
         Task<SubscriberList> getSubscriberList(
-            [AliasAs("user")] String user, [AliasAs("authToken")] String authToken
+            [AliasAs("user")] string user, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -129,7 +128,7 @@ namespace hitaBot.Refit.api
 
         [Get("/subscriptionlist/{user}")]
         Task<SubscriptionList> getSubscriptionList(
-            [AliasAs("user")] String user, [AliasAs("authToken")] String authToken
+            [AliasAs("user")] string user, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -142,7 +141,7 @@ namespace hitaBot.Refit.api
 
         [Post("/twitter/post")]
         Task<SocialPost> postTwitter(
-            [AliasAs("authToken")] String authToken, [AliasAs("user_name")] String userName
+            [AliasAs("authToken")] string authToken, [AliasAs("user_name")] string userName
             );
 
         /**
@@ -155,7 +154,7 @@ namespace hitaBot.Refit.api
 
         [Get("/user/access/{channel}/{authToken}")]
         Task<UserAccess> getAccessLevel(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -167,7 +166,7 @@ namespace hitaBot.Refit.api
 
         [Get("/user/list")]
         Task<UserList> getUserList(
-            [AliasAs("q")] String q
+            [AliasAs("q")] string q
             );
 
         /**
@@ -180,7 +179,7 @@ namespace hitaBot.Refit.api
 
         [Get("/user/subscription/{channel}/{authToken}")]
         Task<IsSubscriber> getSubStatus(
-            [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -193,7 +192,7 @@ namespace hitaBot.Refit.api
 
         [Get("/user/{user}")]
         Task<User> getUser(
-            [AliasAs("user")] String user, [AliasAs("authToken")] String authToken
+            [AliasAs("user")] string user, [AliasAs("authToken")] string authToken
             );
 
         /**
@@ -207,7 +206,7 @@ namespace hitaBot.Refit.api
 
         [Put("/user/{user}")]
         Task<UserUpdated> updateUser(
-            [AliasAs("authToken")] String authToken, [AliasAs("user")] String user, [Body] UserUpdate body
+            [AliasAs("authToken")] string authToken, [AliasAs("user")] string user, [Body] UserUpdate body
             );
 
         /**
@@ -220,7 +219,7 @@ namespace hitaBot.Refit.api
 
         [Post("/user/{user}/team/default")]
         Task<Successful> setDefaultTeam(
-            [AliasAs("authToken")] String authToken, [Body] Object body
+            [AliasAs("authToken")] string authToken, [Body] object body
             );
     }
 }
