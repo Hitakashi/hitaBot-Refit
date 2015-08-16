@@ -1,50 +1,48 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace hitaBot.Refit.Model {
-
-  /// <summary>
-  /// 
-  /// </summary>
-  [DataContract]
-  public class Teams {
-    
+namespace hitaBot.Refit.Model
+{
     /// <summary>
-    /// Gets or Sets Teams
     /// </summary>
-    [DataMember(Name="teams", EmitDefaultValue=false)]
-    public List<Team> TeamsVar { get; set; }
+    [DataContract]
+    public class Teams
+    {
+        /// <summary>
+        ///     Gets or Sets Teams
+        /// </summary>
+        [DataMember(Name = "teams", EmitDefaultValue = false)]
+        public List<Team> TeamsVar { get; set; }
 
-    
+        /// <summary>
+        ///     Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class Teams {\n");
 
-    /// <summary>
-    /// Get the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()  {
-      var sb = new StringBuilder();
-      sb.Append("class Teams {\n");
-      
-      sb.Append("  Teams: ").Append(TeamsVar).Append("\n");
-      
-      sb.Append("}\n");
-      return sb.ToString();
-    }
+            sb.Append("  Teams: ").Append(TeamsVar).Append("\n");
 
-    /// <summary>
-    /// Get the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public string ToJson() {
-      return JsonConvert.SerializeObject(this, Formatting.Indented);
-    }
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        ///     Get the JSON string presentation of the object
+        /// </summary>
+        /// <returns>JSON string presentation of the object</returns>
+        public string ToJson()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
         [DataContract]
         public class Info
         {
-
             [DataMember(Name = "group_id")]
             public int GroupId { get; set; }
 
@@ -79,7 +77,6 @@ namespace hitaBot.Refit.Model {
         [DataContract]
         public class Member
         {
-
             [DataMember(Name = "followers")]
             public int Followers { get; set; }
 
@@ -126,7 +123,6 @@ namespace hitaBot.Refit.Model {
         [DataContract]
         public class Team
         {
-
             [DataMember(Name = "info")]
             public Info Info { get; set; }
 

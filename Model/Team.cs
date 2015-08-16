@@ -1,68 +1,64 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace hitaBot.Refit.Model {
-
-  /// <summary>
-  /// 
-  /// </summary>
-  [DataContract]
-  public class Team {
-    
+namespace hitaBot.Refit.Model
+{
     /// <summary>
-    /// Gets or Sets Info
     /// </summary>
-    [DataMember(Name="info", EmitDefaultValue=false)]
-    public InfoObj Info { get; set; }
+    [DataContract]
+    public class Team
+    {
+        /// <summary>
+        ///     Gets or Sets Info
+        /// </summary>
+        [DataMember(Name = "info", EmitDefaultValue = false)]
+        public InfoObj Info { get; set; }
 
-    
-    /// <summary>
-    /// Gets or Sets Media
-    /// </summary>
-    [DataMember(Name="media", EmitDefaultValue=false)]
-    public MediaObj Media { get; set; }
+        /// <summary>
+        ///     Gets or Sets Media
+        /// </summary>
+        [DataMember(Name = "media", EmitDefaultValue = false)]
+        public MediaObj Media { get; set; }
 
-    
-    /// <summary>
-    /// Gets or Sets Members
-    /// </summary>
-    [DataMember(Name="members", EmitDefaultValue=false)]
-    public List<Member> Members { get; set; }
+        /// <summary>
+        ///     Gets or Sets Members
+        /// </summary>
+        [DataMember(Name = "members", EmitDefaultValue = false)]
+        public List<Member> Members { get; set; }
 
-    
+        /// <summary>
+        ///     Get the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("class Team {\n");
 
-    /// <summary>
-    /// Get the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()  {
-      var sb = new StringBuilder();
-      sb.Append("class Team {\n");
-      
-      sb.Append("  Info: ").Append(Info).Append("\n");
-      
-      sb.Append("  Media: ").Append(Media).Append("\n");
-      
-      sb.Append("  Members: ").Append(Members).Append("\n");
-      
-      sb.Append("}\n");
-      return sb.ToString();
-    }
+            sb.Append("  Info: ").Append(Info).Append("\n");
 
-    /// <summary>
-    /// Get the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public string ToJson() {
-      return JsonConvert.SerializeObject(this, Formatting.Indented);
-    }
+            sb.Append("  Media: ").Append(Media).Append("\n");
+
+            sb.Append("  Members: ").Append(Members).Append("\n");
+
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        ///     Get the JSON string presentation of the object
+        /// </summary>
+        /// <returns>JSON string presentation of the object</returns>
+        public string ToJson()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
         [DataContract]
         public class InfoObj
         {
-
             [DataMember(Name = "group_id")]
             public int GroupId { get; set; }
 
@@ -104,7 +100,6 @@ namespace hitaBot.Refit.Model {
         [DataContract]
         public class MediaObj
         {
-
             [DataMember(Name = "livestream")]
             public List<Livestream> Livestream { get; set; }
 
@@ -115,7 +110,6 @@ namespace hitaBot.Refit.Model {
         [DataContract]
         public class Member
         {
-
             [DataMember(Name = "followers")]
             public int Followers { get; set; }
 
@@ -159,5 +153,4 @@ namespace hitaBot.Refit.Model {
             public bool GroupAccepted { get; set; }
         }
     }
-
 }
