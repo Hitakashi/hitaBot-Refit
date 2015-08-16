@@ -10,8 +10,4 @@ You can then use rest variables with it's methods to run a Web Connection, All R
 
 Known Issues:
 
-Some methods return Task&lt;Object&gt;, You might be able to parse them with JSON.Net
-
-Some methods return Task&lt;string&gt;, You can parse them with JSON.Net for now.
-
-Missing models will be added later. 
+All APIs now return a Task&lt;T&gt;, Some of the more convoluted APIs will have a string inside the model which you'll have to parse. Most of these contain dynamic properties which makes it a tad hard to make a model out of it.
