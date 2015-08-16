@@ -6,7 +6,7 @@ using Refit;
 
 namespace hitaBot.Refit.api
 {
-    public interface UploadApi
+    public interface IUpload
     {
         /**
    * Changes User Avatar or Channel Cover

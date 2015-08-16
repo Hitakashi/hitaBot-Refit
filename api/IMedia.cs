@@ -4,7 +4,7 @@ using Refit;
 
 namespace hitaBot.Refit.api
 {
-    public interface MediaApi
+    public interface IMedia
     {
         /**
    * Gets Media Ingests

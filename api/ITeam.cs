@@ -4,7 +4,7 @@ using Refit;
 
 namespace hitaBot.Refit.api
 {
-    public interface TeamApi
+    public interface ITeam
     {
         /**
    * Create a Team

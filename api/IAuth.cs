@@ -4,7 +4,7 @@ using Refit;
 
 namespace hitaBot.Refit.api
 {
-    public interface AuthApi
+    public interface IAuth
     {
         /**
        * Authenticates user with username and password.

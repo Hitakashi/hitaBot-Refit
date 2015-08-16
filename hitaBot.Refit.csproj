@@ -50,14 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="api\AuthApi.cs" />
-    <Compile Include="api\ChannelApi.cs" />
-    <Compile Include="api\ChatApi.cs" />
-    <Compile Include="api\MediaApi.cs" />
-    <Compile Include="api\RootApi.cs" />
-    <Compile Include="api\TeamApi.cs" />
-    <Compile Include="api\UploadApi.cs" />
-    <Compile Include="api\UserApi.cs" />
+    <Compile Include="api\IAuth.cs" />
+    <Compile Include="api\IChannel.cs" />
+    <Compile Include="api\IChat.cs" />
+    <Compile Include="api\IMedia.cs" />
+    <Compile Include="api\IRoot.cs" />
+    <Compile Include="api\ITeam.cs" />
+    <Compile Include="api\IUpload.cs" />
+    <Compile Include="api\IUser.cs" />
     <Compile Include="Model\AcceptsTeam.cs" />
     <Compile Include="Model\AccessDenied.cs" />
     <Compile Include="Model\AddChatModerators.cs" />

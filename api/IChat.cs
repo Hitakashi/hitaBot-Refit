@@ -4,7 +4,7 @@ using Refit;
 
 namespace hitaBot.Refit.api
 {
-    public interface ChatApi
+    public interface IChat
     {
         /**
    * Get Chat Blacklist

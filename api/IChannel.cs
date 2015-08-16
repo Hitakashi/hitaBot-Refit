@@ -4,7 +4,7 @@ using Refit;
 
 namespace hitaBot.Refit.api
 {
-    public interface ChannelApi
+    public interface IChannel
     {
         /**
          * Gets channel editors

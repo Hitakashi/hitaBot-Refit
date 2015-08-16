@@ -4,7 +4,7 @@ using Refit;
 
 namespace hitaBot.Refit.api
 {
-    public interface UserApi
+    public interface IUser
     {
         /**
    * Posts to enabled Facebook walls.
