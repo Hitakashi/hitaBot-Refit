@@ -16,7 +16,7 @@ namespace hitaBot.Refit.api
    */
 
         [Post("/facebook/post")]
-        Task<Object> postFacebook(
+        Task<SocialPost> postFacebook(
             [AliasAs("authToken")] String authToken, [AliasAs("user_name")] String userName
             );
 
@@ -43,7 +43,7 @@ namespace hitaBot.Refit.api
    */
 
         [Delete("/follow")]
-        Task<Object> unfollowUser(
+        Task<UnfollowUser> unfollowUser(
             [AliasAs("authToken")] String authToken, [AliasAs("follow_id")] String followId,
             [AliasAs("type")] String type
             );
@@ -101,7 +101,7 @@ namespace hitaBot.Refit.api
    */
 
         [Put("/notifications")]
-        Task<String> setNotifications(
+        Task<SuccessOnlyString> setNotifications(
             [AliasAs("authToken")] String authToken, [AliasAs("user_name")] String userName,
             [Body] SetNotifications body
             );
@@ -141,7 +141,7 @@ namespace hitaBot.Refit.api
    */
 
         [Post("/twitter/post")]
-        Task<Object> postTwitter(
+        Task<SocialPost> postTwitter(
             [AliasAs("authToken")] String authToken, [AliasAs("user_name")] String userName
             );
 
@@ -179,7 +179,7 @@ namespace hitaBot.Refit.api
    */
 
         [Get("/user/subscription/{channel}/{authToken}")]
-        Task<Object> getSubStatus(
+        Task<IsSubscriber> getSubStatus(
             [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
             );
 
@@ -206,7 +206,7 @@ namespace hitaBot.Refit.api
    */
 
         [Put("/user/{user}")]
-        Task<Object> updateUser(
+        Task<UserUpdated> updateUser(
             [AliasAs("authToken")] String authToken, [AliasAs("user")] String user, [Body] UserUpdate body
             );
 

@@ -21,7 +21,7 @@ namespace hitaBot.Refit.api
 
         [Multipart]
         [Post("/upload/account/{user}/{authToken}")]
-        Task<Object> uploadUserAvatarCover(
+        Task<Cover> uploadUserAvatarCover(
             [AliasAs("user")] String user, [AliasAs("authToken")] String authToken,
             [AttachmentName("file")] Stream file = null, [AttachmentName("cover")] Stream cover = null
             );
@@ -35,7 +35,7 @@ namespace hitaBot.Refit.api
    */
 
         [Get("/upload/description/{channel}/{authToken}")]
-        Task<List<Object>> getDescImages(
+        Task<List<GetUploadDesc>> getDescImages(
             [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken
             );
 
@@ -65,7 +65,7 @@ namespace hitaBot.Refit.api
    */
 
         [Delete("/upload/description/{channel}/{authToken}")]
-        Task<String> removeDescImages(
+        Task<SuccessOnlyString> removeDescImages(
             [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken,
             [AliasAs("image_id")] String imageId
             );

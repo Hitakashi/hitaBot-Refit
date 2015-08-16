@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using hitaBot.Refit.Model;
 using Refit;
 
 namespace hitaBot.Refit.api
@@ -13,6 +14,6 @@ namespace hitaBot.Refit.api
    */
 
         [Get("/globalmessage")]
-        Task<Object> globalMessage();
+        Task<GlobalMessage> globalMessage();
     }
 }

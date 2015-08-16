@@ -96,6 +96,7 @@
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\GameObj.cs" />
     <Compile Include="Model\Games.cs" />
+    <Compile Include="Model\GetUploadDesc.cs" />
     <Compile Include="Model\GlobalMessage.cs" />
     <Compile Include="Model\HostersList.cs" />
     <Compile Include="Model\HostersListObj.cs" />
@@ -166,6 +167,7 @@
     <Compile Include="Model\UpdateMedia.cs" />
     <Compile Include="Model\UpdateTeam.cs" />
     <Compile Include="Model\UpdateVideo.cs" />
+    <Compile Include="Model\UploadDesc.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserAccess.cs" />
     <Compile Include="Model\UserList.cs" />

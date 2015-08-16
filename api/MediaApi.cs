@@ -83,7 +83,7 @@ namespace hitaBot.Refit.api
    */
 
         [Get("/media/status/{channel}")]
-        Task<Object> getMediaStatus(
+        Task<MediaStatus> getMediaStatus(
             [AliasAs("channel")] String channel
             );
 
@@ -96,7 +96,7 @@ namespace hitaBot.Refit.api
    */
 
         [Post("/media/video/list")]
-        Task<Object> createVideo(
+        Task<VideoCreated> createVideo(
             [AliasAs("authToken")] String authToken, [Body] CreateVideo body
             );
 
@@ -158,7 +158,7 @@ namespace hitaBot.Refit.api
    */
 
         [Get("/media/views/{channel}")]
-        Task<Object> getMediaViews(
+        Task<MediaViews> getMediaViews(
             [AliasAs("channel")] String channel
             );
 
@@ -186,6 +186,32 @@ namespace hitaBot.Refit.api
         [Get("/recordings/{channel}")]
         Task<Recording> getRecordings(
             [AliasAs("channel")] String channel, [AliasAs("authToken")] String authToken, [AliasAs("limit")] int limit
+            );
+        /**
+* Get Game Properties
+* You can use either a game ID or game name. For a game name you must use the soe query.
+* @param game Game ID or Game Name
+* @param soe Use for Game Names
+* @return Game
+*/
+
+        [Get("/game/{game}")]
+        Task<Game> getGame(
+            [AliasAs("game")] String game, [AliasAs("soe")] Boolean soe
+            );
+
+        /**
+   * Get Games
+   * Searches for games by keywords
+   * @param q Search keyword for &#39;category_name&#39;
+   * @param limit Maximum number of games objects
+   * @param liveonly Only show games with live channels
+   * @return Games
+   */
+
+        [Get("/games")]
+        Task<Games> getGames(
+            [AliasAs("q")] String q, [AliasAs("limit")] int limit, [AliasAs("liveonly")] Boolean liveonly
             );
     }
 }

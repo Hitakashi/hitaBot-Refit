@@ -16,7 +16,7 @@ namespace hitaBot.Refit.api
    */
 
         [Post("/team")]
-        Task<Object> createTeam(
+        Task<TeamCreate> createTeam(
             [AliasAs("authToken")] String authToken, [Body] CreateTeam body
             );
 
@@ -69,7 +69,7 @@ namespace hitaBot.Refit.api
    */
 
         [Delete("/team/{teamName}/{user}")]
-        Task<Object> deleteTeam(
+        Task<LeaveTeam> deleteTeam(
             [AliasAs("teamName")] String teamName, [AliasAs("user")] String user,
             [AliasAs("authToken")] String authToken,
             [AliasAs("group_id")] int groupId
