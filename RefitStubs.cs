@@ -294,7 +294,7 @@ namespace hitaBot.Refit.api
             return (Task<Ingests>) methodImpls["getIngests"](Client, arguments);
         }
 
-        public virtual Task<MediaList> getMediaLiveList(int limit,bool showHidden,string filter,string liveonly,string featured,int followerId,string game,bool hiddenOnly,int start,bool publicOnly,string search)
+        public virtual Task<MediaList> getMediaLiveList(int? limit,bool showHidden,string filter,string liveonly,string featured,int? followerId,string game,bool? hiddenOnly,int? start,bool? publicOnly,string search)
         {
             var arguments = new object[] { limit,showHidden,filter,liveonly,featured,followerId,game,hiddenOnly,start,publicOnly,search };
             return (Task<MediaList>) methodImpls["getMediaLiveList"](Client, arguments);
@@ -324,7 +324,7 @@ namespace hitaBot.Refit.api
             return (Task<VideoCreated>) methodImpls["createVideo"](Client, arguments);
         }
 
-        public virtual Task<VideoList> getVideoList(string channel,string authToken,string filter,bool hiddenOnly,int limit,bool publicOnly,string search,bool showHidden,bool yt)
+        public virtual Task<VideoList> getVideoList(string channel,string authToken,string filter,bool? hiddenOnly,int? limit,bool? publicOnly,string search,bool? showHidden,bool? yt)
         {
             var arguments = new object[] { channel,authToken,filter,hiddenOnly,limit,publicOnly,search,showHidden,yt };
             return (Task<VideoList>) methodImpls["getVideoList"](Client, arguments);
@@ -354,7 +354,7 @@ namespace hitaBot.Refit.api
             return (Task<MediaInfo>) methodImpls["getMediaInfo"](Client, arguments);
         }
 
-        public virtual Task<Recording> getRecordings(string channel,string authToken,int limit)
+        public virtual Task<Recording> getRecordings(string channel,string authToken,int? limit)
         {
             var arguments = new object[] { channel,authToken,limit };
             return (Task<Recording>) methodImpls["getRecordings"](Client, arguments);
@@ -366,7 +366,7 @@ namespace hitaBot.Refit.api
             return (Task<Game>) methodImpls["getGame"](Client, arguments);
         }
 
-        public virtual Task<Games> getGames(string q,int limit,bool liveonly)
+        public virtual Task<Games> getGames(string q,int? limit,bool? liveonly)
         {
             var arguments = new object[] { q,limit,liveonly };
             return (Task<Games>) methodImpls["getGames"](Client, arguments);
@@ -422,7 +422,7 @@ namespace hitaBot.Refit.api
             return (Task<TeamCreate>) methodImpls["createTeam"](Client, arguments);
         }
 
-        public virtual Task<Team> getTeam(string teamName,string filter,int limit,bool liveonly,bool media,string mediaType,int offset)
+        public virtual Task<Team> getTeam(string teamName,string filter,int? limit,bool? liveonly,bool? media,string mediaType,int? offset)
         {
             var arguments = new object[] { teamName,filter,limit,liveonly,media,mediaType,offset };
             return (Task<Team>) methodImpls["getTeam"](Client, arguments);
@@ -452,7 +452,7 @@ namespace hitaBot.Refit.api
             return (Task<Teams>) methodImpls["searchTeams"](Client, arguments);
         }
 
-        public virtual Task<TeamsUser> getTeamUser(string user,bool liveonly,bool media,string mediaType,bool partner)
+        public virtual Task<TeamsUser> getTeamUser(string user,bool? liveonly,bool? media,string mediaType,bool? partner)
         {
             var arguments = new object[] { user,liveonly,media,mediaType,partner };
             return (Task<TeamsUser>) methodImpls["getTeamUser"](Client, arguments);
@@ -544,7 +544,7 @@ namespace hitaBot.Refit.api
             return (Task<UnfollowUser>) methodImpls["unfollowUser"](Client, arguments);
         }
 
-        public virtual Task<FollowingUser> getFollowing(string userName,string sort,int offset,int limit,bool reverse)
+        public virtual Task<FollowingUser> getFollowing(string userName,string sort,int? offset,int? limit,bool? reverse)
         {
             var arguments = new object[] { userName,sort,offset,limit,reverse };
             return (Task<FollowingUser>) methodImpls["getFollowing"](Client, arguments);

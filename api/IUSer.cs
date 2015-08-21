@@ -60,8 +60,8 @@ namespace hitaBot.Refit.api
 
         [Get("/following/user")]
         Task<FollowingUser> getFollowing(
-            [AliasAs("user_name")] string userName, [AliasAs("sort")] string sort, [AliasAs("offset")] int offset,
-            [AliasAs("limit")] int limit, [AliasAs("reverse")] bool reverse
+            [AliasAs("user_name")] string userName, [AliasAs("sort")] string sort, [AliasAs("offset")] int? offset,
+            [AliasAs("limit")] int? limit, [AliasAs("reverse")] bool? reverse
             );
 
         /**
