@@ -34,9 +34,9 @@ namespace hitaBot.Refit.api
 
         [Get("/team/{teamName}")]
         Task<Team> getTeam(
-            [AliasAs("teamName")] string teamName, [AliasAs("filter")] string filter, [AliasAs("limit")] int limit,
-            [AliasAs("liveonly")] bool liveonly, [AliasAs("media")] bool media,
-            [AliasAs("media_type")] string mediaType, [AliasAs("offset")] int offset
+            [AliasAs("teamName")] string teamName, [AliasAs("filter")] string filter, [AliasAs("limit")] int? limit,
+            [AliasAs("liveonly")] bool? liveonly, [AliasAs("media")] bool? media,
+            [AliasAs("media_type")] string mediaType, [AliasAs("offset")] int? offset
             );
 
         /**
@@ -111,8 +111,8 @@ namespace hitaBot.Refit.api
 
         [Get("/teams/{user}")]
         Task<TeamsUser> getTeamUser(
-            [AliasAs("user")] string user, [AliasAs("liveonly")] bool liveonly, [AliasAs("media")] bool media,
-            [AliasAs("media_type")] string mediaType, [AliasAs("partner")] bool partner
+            [AliasAs("user")] string user, [AliasAs("liveonly")] bool? liveonly, [AliasAs("media")] bool? media,
+            [AliasAs("media_type")] string mediaType, [AliasAs("partner")] bool? partner
             );
     }
 }

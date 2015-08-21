@@ -34,11 +34,11 @@ namespace hitaBot.Refit.api
 
         [Get("/media/live/list")]
         Task<MediaList> getMediaLiveList(
-            [AliasAs("limit")] int limit, [AliasAs("showHidden")] bool showHidden, [AliasAs("filter")] string filter,
+            [AliasAs("limit")] int? limit, [AliasAs("showHidden")] bool showHidden, [AliasAs("filter")] string filter,
             [AliasAs("liveonly")] string liveonly, [AliasAs("featured")] string featured,
-            [AliasAs("follower_id")] int followerId, [AliasAs("game")] string game,
-            [AliasAs("hiddenOnly")] bool hiddenOnly, [AliasAs("start")] int start,
-            [AliasAs("publicOnly")] bool publicOnly, [AliasAs("search")] string search
+            [AliasAs("follower_id")] int? followerId, [AliasAs("game")] string game,
+            [AliasAs("hiddenOnly")] bool? hiddenOnly, [AliasAs("start")] int? start,
+            [AliasAs("publicOnly")] bool? publicOnly, [AliasAs("search")] string search
             );
 
         /**
@@ -116,9 +116,9 @@ namespace hitaBot.Refit.api
         [Get("/media/video/{channel}/list")]
         Task<VideoList> getVideoList(
             [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken,
-            [AliasAs("filter")] string filter, [AliasAs("hiddenOnly")] bool hiddenOnly, [AliasAs("limit")] int limit,
-            [AliasAs("publicOnly")] bool publicOnly, [AliasAs("search")] string search,
-            [AliasAs("showHidden")] bool showHidden, [AliasAs("yt")] bool yt
+            [AliasAs("filter")] string filter, [AliasAs("hiddenOnly")] bool? hiddenOnly, [AliasAs("limit")] int? limit,
+            [AliasAs("publicOnly")] bool? publicOnly, [AliasAs("search")] string search,
+            [AliasAs("showHidden")] bool? showHidden, [AliasAs("yt")] bool? yt
             );
 
         /**
@@ -183,7 +183,7 @@ namespace hitaBot.Refit.api
 
         [Get("/recordings/{channel}")]
         Task<Recording> getRecordings(
-            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken, [AliasAs("limit")] int limit
+            [AliasAs("channel")] string channel, [AliasAs("authToken")] string authToken, [AliasAs("limit")] int? limit
             );
 
         /**
@@ -210,7 +210,7 @@ namespace hitaBot.Refit.api
 
         [Get("/games")]
         Task<Games> getGames(
-            [AliasAs("q")] string q, [AliasAs("limit")] int limit, [AliasAs("liveonly")] bool liveonly
+            [AliasAs("q")] string q, [AliasAs("limit")] int? limit, [AliasAs("liveonly")] bool? liveonly
             );
     }
 }
