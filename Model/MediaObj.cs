@@ -154,7 +154,7 @@ namespace hitaBot.Refit.Model
         ///     Gets or Sets MediaTranscoding
         /// </summary>
         [DataMember(Name = "media_transcoding", EmitDefaultValue = false)]
-        public int MediaTranscoding { get; set; }
+        public int? MediaTranscoding { get; set; }
 
         /// <summary>
         ///     Gets or Sets MediaRepairSource
